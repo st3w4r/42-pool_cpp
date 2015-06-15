@@ -13,63 +13,67 @@
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
 
+#include <string>
+
 class Contact {
 
 	public:
-		Contact(std::String firstName,
-				std::String lastName,
-				std::String nickName,
-				std::String login,
-				std::String postalAddress,
-				std::String emailAddress,
-				std::String phoneNumber,
-				std::String birthdayDate,
-				std::String favoriteMeal,
-				std::String underwearColor,
-				std::String darkestSecret
+		Contact(std::string firstName,
+				std::string lastName,
+				std::string nickName,
+				std::string login,
+				std::string postalAddress,
+				std::string emailAddress,
+				std::string phoneNumber,
+				std::string birthdayDate,
+				std::string favoriteMeal,
+				std::string underwearColor,
+				std::string darkestSecret
 				);
 		~Contact(void);
 
 		//__Getter__
-		std::String getFistName(void) const;
-		std::String getLastName(void) const;
-		std::String getNickName(void) const;
-		std::String getLogin(void) const;
-		std::String getPostalAddress(void) const;
-		std::String getEmailAddress(void) const;
-		std::String getPhoneNumber(void) const;
-		std::String getBirthdayDate(void) const;
-		std::String getFavoriteMeal(void) const;
-		std::String getUnderwearColor(void) const;
-		std::String getDarkestSecret(void) const;
+		int getIndex(void) const;
+		std::string getfirstName(void) const;
+		std::string getLastName(void) const;
+		std::string getNickName(void) const;
+		std::string getLogin(void) const;
+		std::string getPostalAddress(void) const;
+		std::string getEmailAddress(void) const;
+		std::string getPhoneNumber(void) const;
+		std::string getBirthdayDate(void) const;
+		std::string getFavoriteMeal(void) const;
+		std::string getUnderwearColor(void) const;
+		std::string getDarkestSecret(void) const;
 
 		//__Setter__
-		void setFistName(std::String firstName);
-		void setLastName(std::String lastName);
-		void setNickName(std::String nickName);
-		void setLogin(std::String login);
-		void setPostalAddress(std::String postalAddress);
-		void setEmailAddress(std::String emailAddress);
-		void setPhoneNumber(std::String phoneNumber);
-		void setBirthdayDate(std::String birthdayDate);
-		void setFavoriteMeal(std::String favoriteMeal);
-		void setUnderwearColor(std::String underwearColor);
-		void setDarkestSecret(std::String darkestSecret);
+		void setIndex(int index);
+		void setfirstName(std::string firstName);
+		void setLastName(std::string lastName);
+		void setNickName(std::string nickName);
+		void setLogin(std::string login);
+		void setPostalAddress(std::string postalAddress);
+		void setEmailAddress(std::string emailAddress);
+		void setPhoneNumber(std::string phoneNumber);
+		void setBirthdayDate(std::string birthdayDate);
+		void setFavoriteMeal(std::string favoriteMeal);
+		void setUnderwearColor(std::string underwearColor);
+		void setDarkestSecret(std::string darkestSecret);
 
 	private:
 		//__Attributes__
 		int			_index;
-		std::String _fistName;
-		std::String _lastName;
-		std::String _nickName;
-		std::String _login;
-		std::String _postalAddress;
-		std::String _emailAddress;
-		std::String _phoneNumber;
-		std::String _birthdayDate;
-		std::String _favoriteMeal;
-		std::String _underwearColor;
-		std::String _darkestSecret;
+		std::string _firstName;
+		std::string _lastName;
+		std::string _nickName;
+		std::string _login;
+		std::string _postalAddress;
+		std::string _emailAddress;
+		std::string _phoneNumber;
+		std::string _birthdayDate;
+		std::string _favoriteMeal;
+		std::string _underwearColor;
+		std::string _darkestSecret;
 
 		//__Methodes__
 

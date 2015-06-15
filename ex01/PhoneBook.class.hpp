@@ -13,6 +13,8 @@
 #ifndef PHONEBOOK_CLASS_HPP
 # define PHONEBOOK_CLASS_HPP
 
+#include <iostream>
+#include <string>
 #include "Contact.class.hpp"
 
 class PhoneBook {
@@ -26,16 +28,16 @@ class PhoneBook {
 	private:
 		//Attributes
 		Contact _arrContact[8];
+		int		_nbContact;
 
 		//Methodes
 		void _addContact(Contact contact);
 
 		void _searchContact(void);
 		void _exitPhoneBook(void);
-		void _interpretCommand(std::String cmd);
+		void _interpretCommand(std::string cmd);
 
 		void _displayAddContact(void);
-
 };
 
 #endif //PHONEBOOK_CLASS_HP

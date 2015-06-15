@@ -12,19 +12,19 @@
 
 #include "Contact.class.hpp"
 
-Contact::Contact(std::String firstName,
-				std::String lastName,
-				std::String nickName,
-				std::String login,
-				std::String postalAddress,
-				std::String emailAddress,
-				std::String phoneNumber,
-				std::String birthdayDate,
-				std::String favoriteMeal,
-				std::String underwearColor,
-				std::String darkestSecret
+Contact::Contact(std::string firstName,
+				std::string lastName,
+				std::string nickName,
+				std::string login,
+				std::string postalAddress,
+				std::string emailAddress,
+				std::string phoneNumber,
+				std::string birthdayDate,
+				std::string favoriteMeal,
+				std::string underwearColor,
+				std::string darkestSecret
 			) :
-				_fistName(firstName),
+				_firstName(firstName),
 				_lastName(lastName),
 				_nickName(nickName),
 				_login(login),
@@ -49,91 +49,95 @@ int		Contact::getIndex(void) const {
 	return this->_index;
 }
 
-std::String Contact::getFistName(void) const {
-	return this->_fistName;
+std::string Contact::getfirstName(void) const {
+	return this->_firstName;
 }
 
-std::String Contact::getLastName(void) const {
+std::string Contact::getLastName(void) const {
 	return this->_lastName;
 }
 
-std::String Contact::getNickName(void) const {
+std::string Contact::getNickName(void) const {
 	return this->_nickName;
 }
 
-std::String Contact::getLogin(void) const {
+std::string Contact::getLogin(void) const {
 	return this->_login;
 }
 
-std::String Contact::getPostalAddress(void) const {
+std::string Contact::getPostalAddress(void) const {
 	return this->_postalAddress;
 }
 
-std::String Contact::getEmailAddress(void) const {
+std::string Contact::getEmailAddress(void) const {
 	return this->_emailAddress;
 }
 
-std::String Contact::getPhoneNumber(void) const {
+std::string Contact::getPhoneNumber(void) const {
 	return this->_phoneNumber;
 }
 
-std::String Contact::getBirthdayDate(void) const {
+std::string Contact::getBirthdayDate(void) const {
 	return this->_birthdayDate;
 }
 
-std::String Contact::getFavoriteMeal(void) const {
+std::string Contact::getFavoriteMeal(void) const {
 	return this->_favoriteMeal;
 }
 
-std::String Contact::getUnderwearColor(void) const {
+std::string Contact::getUnderwearColor(void) const {
 	return this->_underwearColor;
 }
 
-std::String Contact::getDarkestSecret(void) const {
+std::string Contact::getDarkestSecret(void) const {
 	return this->_darkestSecret;
 }
 
 //__Setter__
-void Contact::setFistName(std::String firstName) {
+void Contact::setIndex(int index) {
+	this->_index = index;
+}
+
+void Contact::setfirstName(std::string firstName) {
 	this->_firstName = firstName;
 }
 
-void Contact::setLastName(std::String lastName) {
+void Contact::setLastName(std::string lastName) {
 	this->_lastName = lastName;
 }
 
-void Contact::setNickName(std::String nickName) {
+void Contact::setNickName(std::string nickName) {
 	this->_nickName = nickName;
 }
 
-void Contact::setLogin(std::String login) {
+void Contact::setLogin(std::string login) {
 	this->_login = login;
 }
 
-void Contact::setPostalAddress(std::String postalAddress) {
+void Contact::setPostalAddress(std::string postalAddress) {
 	this->_postalAddress = postalAddress;
 }
 
-void Contact::setEmailAddress(std::String emailAddress) {
+void Contact::setEmailAddress(std::string emailAddress) {
 	this->_emailAddress = emailAddress;
 }
 
-void Contact::setPhoneNumber(std::String phoneNumber) {
+void Contact::setPhoneNumber(std::string phoneNumber) {
 	this->_phoneNumber = phoneNumber;
 }
 
-void Contact::setBirthdayDate(std::String birthdayDate) {
+void Contact::setBirthdayDate(std::string birthdayDate) {
 	this->_birthdayDate = birthdayDate;
 }
 
-void Contact::setFavoriteMeal(std::String favoriteMeal) {
+void Contact::setFavoriteMeal(std::string favoriteMeal) {
 	this->_favoriteMeal = favoriteMeal;
 }
 
-void Contact::setUnderwearColor(std::String underwearColor) {
+void Contact::setUnderwearColor(std::string underwearColor) {
 	this->_underwearColor = underwearColor;
 }
 
-void Contact::setDarkestSecret(std::String darkestSecret) {
+void Contact::setDarkestSecret(std::string darkestSecret) {
 	this->_darkestSecret = darkestSecret;
 }

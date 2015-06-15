@@ -13,14 +13,7 @@
 #include "PhoneBook.class.hpp"
 
 PhoneBook::PhoneBook(void) {
-	int i;
-
-	i = 0;
-	while (i < 8)
-	{
-		this->_arrContact[i] = NULL;
-		++i;
-	}
+	this->_nbContact = 0;
 	return;
 }
 
@@ -29,15 +22,15 @@ PhoneBook::~PhoneBook(void) {
 }
 
 void PhoneBook::start(void) {
-	std::String buf;
+	std::string buf;
 
 	std::cout << "[PHONE BOOK]" << std::endl;
-	std::getline(std::csin, buf);
+	std::getline(std::cin, buf);
 	PhoneBook::_interpretCommand(buf);
 	return;
 }
 
-void PhoneBook::_interpretCommand(std::String cmd) {
+void PhoneBook::_interpretCommand(std::string cmd) {
 	if (cmd.compare("ADD") == 0)
 		PhoneBook::_displayAddContact();
 	else if (cmd.compare("SEARCH") == 0)
@@ -49,20 +42,20 @@ void PhoneBook::_interpretCommand(std::String cmd) {
 
 void PhoneBook::_displayAddContact(void) {
 
-	std::String fistName;
-	std::String lastName;
-	std::String nickName;
-	std::String login;
-	std::String postalAddress;
-	std::String emailAddress;
-	std::String phoneNumber;
-	std::String birthdayDate;
-	std::String favoriteMeal;
-	std::String underwearColor;
-	std::String darkestSecret;
+	std::string firstName;
+	std::string lastName;
+	std::string nickName;
+	std::string login;
+	std::string postalAddress;
+	std::string emailAddress;
+	std::string phoneNumber;
+	std::string birthdayDate;
+	std::string favoriteMeal;
+	std::string underwearColor;
+	std::string darkestSecret;
 
 	std::cout << "First Name: " << std::endl;
-	std::cin >> fistName;
+	std::cin >> firstName;
 	std::cout << "Last Name: " << std::endl;
 	std::cin >> lastName;
 	std::cout << "Nickname: " << std::endl;
@@ -84,7 +77,7 @@ void PhoneBook::_displayAddContact(void) {
 	std::cout << "Darkest Secret: " << std::endl;
 	std::cin >> darkestSecret;
 
-	Contact contact = Contact::Contact(fistName, lastName, nickName, login,
+	Contact contact = Contact::Contact(firstName, lastName, nickName, login,
 		postalAddress, emailAddress, phoneNumber, birthdayDate, favoriteMeal,
 		underwearColor, darkestSecret);
 	this->_addContact(contact);
@@ -93,12 +86,9 @@ void PhoneBook::_displayAddContact(void) {
 
 void PhoneBook::_addContact(Contact contact)
 {
-	int i;
-
-	i = 0;
-	while (this->_arrContact[i] != NULL && i < 8)
-		++i;
-	this->_arrContact[i] = contact;
+	contact.setIndex(this->_nbContact);
+	this->_arrContact[this->_nbContact] = contact;
+	this->_nbContact++;
 	return;
 }
 /*
