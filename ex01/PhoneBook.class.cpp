@@ -94,6 +94,11 @@ void PhoneBook::_readGetLine(std::string *strIn)
 void PhoneBook::_displaySearchContact(void) {
 	int			index;
 
+	if (this->_nbContact == 0)
+	{
+		std::cout << "PhoneBook is empty." << std::endl;
+		return;
+	}
 	for (int i = 0; i < this->_nbContact; i++)
 		PhoneBook::_displayOneContact(_arrContact[i]);
 	std::cout << "Indice: ";
