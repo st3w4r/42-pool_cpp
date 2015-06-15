@@ -27,6 +27,6 @@ int		main(void)
 {
 	PhoneBook phoneBook;
 
-	// phoneBook::start();
+	phoneBook.start();
 	return (0);
 }

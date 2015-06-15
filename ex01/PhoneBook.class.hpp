@@ -27,7 +27,7 @@ class PhoneBook {
 
 	private:
 		//Attributes
-		Contact _arrContact[8];
+		Contact	_arrContact[8];
 		int		_nbContact;
 
 		//Methodes

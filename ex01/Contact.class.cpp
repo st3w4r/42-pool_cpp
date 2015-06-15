@@ -12,35 +12,38 @@
 
 #include "Contact.class.hpp"
 
-Contact::Contact(std::string firstName,
-				std::string lastName,
-				std::string nickName,
-				std::string login,
-				std::string postalAddress,
-				std::string emailAddress,
-				std::string phoneNumber,
-				std::string birthdayDate,
-				std::string favoriteMeal,
-				std::string underwearColor,
-				std::string darkestSecret
-			) :
-				_firstName(firstName),
-				_lastName(lastName),
-				_nickName(nickName),
-				_login(login),
-				_postalAddress(postalAddress),
-				_emailAddress(emailAddress),
-				_phoneNumber(phoneNumber),
-				_birthdayDate(birthdayDate),
-				_favoriteMeal(favoriteMeal),
-				_underwearColor(underwearColor),
-				_darkestSecret(darkestSecret)
-{
-
+Contact::Contact(void) {
 	return;
 }
 
 Contact::~Contact(void) {
+	return;
+}
+
+void Contact::initContact(std::string firstName,
+						std::string lastName,
+						std::string nickName,
+						std::string login,
+						std::string postalAddress,
+						std::string emailAddress,
+						std::string phoneNumber,
+						std::string birthdayDate,
+						std::string favoriteMeal,
+						std::string underwearColor,
+						std::string darkestSecret
+						)
+{
+	this->_firstName = firstName;
+	this->_lastName = lastName;
+	this->_nickName = nickName;
+	this->_login = login;
+	this->_postalAddress = postalAddress;
+	this->_emailAddress = emailAddress;
+	this->_phoneNumber = phoneNumber;
+	this->_birthdayDate = birthdayDate;
+	this->_favoriteMeal = favoriteMeal;
+	this->_underwearColor = underwearColor;
+	this->_darkestSecret = darkestSecret;
 	return;
 }
 

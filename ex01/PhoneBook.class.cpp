@@ -12,8 +12,7 @@
 
 #include "PhoneBook.class.hpp"
 
-PhoneBook::PhoneBook(void) {
-	this->_nbContact = 0;
+PhoneBook::PhoneBook(void) : _nbContact(0) {
 	return;
 }
 
@@ -24,10 +23,10 @@ PhoneBook::~PhoneBook(void) {
 void PhoneBook::start(void) {
 	std::string buf;
 
-	std::cout << "[PHONE BOOK]" << std::endl;
+	std::cout << "[PHONE BOOK] cmd: ";
 	std::getline(std::cin, buf);
 	PhoneBook::_interpretCommand(buf);
-	return;
+	return PhoneBook::start();
 }
 
 void PhoneBook::_interpretCommand(std::string cmd) {
@@ -42,6 +41,7 @@ void PhoneBook::_interpretCommand(std::string cmd) {
 
 void PhoneBook::_displayAddContact(void) {
 
+	Contact contact;
 	std::string firstName;
 	std::string lastName;
 	std::string nickName;
@@ -54,30 +54,30 @@ void PhoneBook::_displayAddContact(void) {
 	std::string underwearColor;
 	std::string darkestSecret;
 
-	std::cout << "First Name: " << std::endl;
-	std::cin >> firstName;
-	std::cout << "Last Name: " << std::endl;
-	std::cin >> lastName;
-	std::cout << "Nickname: " << std::endl;
-	std::cin >> nickName;
-	std::cout << "Login: " << std::endl;
-	std::cin >> login;
-	std::cout << "Postal Address: " << std::endl;
-	std::cin >> postalAddress;
-	std::cout << "Email Address: " << std::endl;
-	std::cin >> emailAddress;
-	std::cout << "Phone number: " << std::endl;
-	std::cin >> phoneNumber;
-	std::cout << "Birthday date: " << std::endl;
-	std::cin >> birthdayDate;
-	std::cout << "Favorite Meal: " << std::endl;
-	std::cin >> favoriteMeal;
-	std::cout << "Underwear Color: " << std::endl;
-	std::cin >> underwearColor;
-	std::cout << "Darkest Secret: " << std::endl;
-	std::cin >> darkestSecret;
+	std::cout << "First Name: ";
+	std::getline(std::cin, firstName);
+	std::cout << "Last Name: ";
+	std::getline(std::cin, lastName);
+	std::cout << "Nickname: ";
+	std::getline(std::cin, nickName);
+	std::cout << "Login: ";
+	std::getline(std::cin, login);
+	std::cout << "Postal Address: ";
+	std::getline(std::cin, postalAddress);
+	std::cout << "Email Address: ";
+	std::getline(std::cin, emailAddress);
+	std::cout << "Phone number: ";
+	std::getline(std::cin, phoneNumber);
+	std::cout << "Birthday date: ";
+	std::getline(std::cin, birthdayDate);
+	std::cout << "Favorite Meal: ";
+	std::getline(std::cin, favoriteMeal);
+	std::cout << "Underwear Color: ";
+	std::getline(std::cin, underwearColor);
+	std::cout << "Darkest Secret: ";
+	std::getline(std::cin, darkestSecret);
 
-	Contact contact = Contact::Contact(firstName, lastName, nickName, login,
+	contact.initContact(firstName, lastName, nickName, login,
 		postalAddress, emailAddress, phoneNumber, birthdayDate, favoriteMeal,
 		underwearColor, darkestSecret);
 	this->_addContact(contact);
@@ -86,6 +86,8 @@ void PhoneBook::_displayAddContact(void) {
 
 void PhoneBook::_addContact(Contact contact)
 {
+	if (this->_nbContact > 8)
+		return;
 	contact.setIndex(this->_nbContact);
 	this->_arrContact[this->_nbContact] = contact;
 	this->_nbContact++;
