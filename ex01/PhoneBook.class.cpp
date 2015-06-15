@@ -32,8 +32,7 @@ void PhoneBook::start(void) {
 	std::String buf;
 
 	std::cout << "[PHONE BOOK]" << std::endl;
-	std::cin >> buf;
-	std::cout << buf;
+	std::getline(std::csin, buf);
 	PhoneBook::_interpretCommand(buf);
 	return;
 }
@@ -42,6 +41,7 @@ void PhoneBook::_interpretCommand(std::String cmd) {
 	if (cmd.compare("ADD") == 0)
 		PhoneBook::_displayAddContact();
 	else if (cmd.compare("SEARCH") == 0)
+		return;
 	else if (cmd.compare("EXIT") == 0)
 		return;
 	return;
@@ -88,6 +88,7 @@ void PhoneBook::_displayAddContact(void) {
 		postalAddress, emailAddress, phoneNumber, birthdayDate, favoriteMeal,
 		underwearColor, darkestSecret);
 	this->_addContact(contact);
+	return;
 }
 
 void PhoneBook::_addContact(Contact contact)
@@ -95,8 +96,13 @@ void PhoneBook::_addContact(Contact contact)
 	int i;
 
 	i = 0;
+	while (this->_arrContact[i] != NULL && i < 8)
+		++i;
+	this->_arrContact[i] = contact;
+	return;
 }
-
+/*
 first name, last name, nickname,
 login, postal address, email address, phone number, birthday date, favorite
 meal, underwear color and darkest secret
+*/

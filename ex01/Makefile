@@ -27,7 +27,9 @@ LIBS =
 #____________FILES____________#
 
 SRC =	main.cpp \
-		Contact.class.cpp
+		Contact.class.cpp \
+		PhoneBook.class.cpp
+
 
 OBJ = $(addprefix $(PATH_SRC), $(SRC:.cpp=.o))
 
