@@ -45,6 +45,10 @@ Contact::~Contact(void) {
 }
 
 //__Getter__
+int		Contact::getIndex(void) const {
+	return this->_index;
+}
+
 std::String Contact::getFistName(void) const {
 	return this->_fistName;
 }

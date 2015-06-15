@@ -58,6 +58,7 @@ class Contact {
 
 	private:
 		//__Attributes__
+		int			_index;
 		std::String _fistName;
 		std::String _lastName;
 		std::String _nickName;

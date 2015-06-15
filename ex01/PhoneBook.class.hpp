@@ -13,18 +13,28 @@
 #ifndef PHONEBOOK_CLASS_HPP
 # define PHONEBOOK_CLASS_HPP
 
+#include "Contact.class.hpp"
+
 class PhoneBook {
 
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
 
-		addContact(Contact::contact);
-		searchContact(void);
-		exitPhoneBook(void);
+		void start(void);
 
 	private:
-		
+		//Attributes
+		Contact _arrContact[8];
+
+		//Methodes
+		void _addContact(Contact contact);
+
+		void _searchContact(void);
+		void _exitPhoneBook(void);
+		void _interpretCommand(std::String cmd);
+
+		void _displayAddContact(void);
 
 };
 

@@ -14,17 +14,18 @@
 #include <string>
 // #include "Contact.class.hpp"
 #include "PhoneBook.class.hpp"
-
+/*
 void	cmdInterpreation(std::String cmd)
 {
 	if (cmd.compare("ADD") == 0)
 	else if (cmd.compare("SEARCH") == 0)
 	else if (cmd.compare("EXIT") == 0)
 
-}
+}*/
 
 int		main(void)
 {
+	PhoneBook phoneBook;
 
 	return (0);
 }
