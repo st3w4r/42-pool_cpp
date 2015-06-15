@@ -36,7 +36,7 @@ void PhoneBook::_interpretCommand(std::string cmd) {
 	else if (cmd.compare("SEARCH") == 0)
 		PhoneBook::_displaySearchContact();
 	else if (cmd.compare("EXIT") == 0)
-		return;
+		exit(0);
 	return;
 }
 
@@ -91,22 +91,70 @@ void PhoneBook::_readGetLine(std::string *strIn)
 		exit(0);
 }
 
-void PhoneBook::_displaySearchContact(void) const {
+void PhoneBook::_displaySearchContact(void) {
+	int			index;
 
 	for (int i = 0; i < this->_nbContact; i++)
 		PhoneBook::_displayOneContact(_arrContact[i]);
+	std::cout << "Indice: ";
+	std::cin >> index;
+	std::cin.clear();
+	std::cin.ignore(10000, '\n');
+	if (index >= 0 && index <= 7 && index < this->_nbContact)
+		PhoneBook::_displayAllOneContact(_arrContact[index]);
+	else
+		std::cout << "Indice Error" << std::endl;
 }
 
-void PhoneBook::_displayOneContact(Contact contact) const {
+void PhoneBook::_displayOneContact(Contact contact) {
+	std::cout << std::setw(10);
 	std::cout << contact.getIndex();
 	std::cout << "|";
-	std::cout << contact.getFirstName();
+	std::cout << std::setw(10);
+	std::cout << PhoneBook::_resizeString(contact.getFirstName());
 	std::cout << "|";
-	std::cout << contact.getLastName();
+	std::cout << std::setw(10);
+	std::cout << PhoneBook::_resizeString(contact.getLastName());
 	std::cout << "|";
-	std::cout << contact.getNickName();
+	std::cout << std::setw(10);
+	std::cout << PhoneBook::_resizeString(contact.getNickName());
 	std::cout << std::endl;
 }
+
+std::string PhoneBook::_resizeString(std::string str) {
+	if (str.size() > 9)
+	{
+		str.resize(9);
+		str.resize(10, '.');
+	}
+	return str;
+}
+
+void PhoneBook::_displayAllOneContact(Contact contact) const {
+	std::cout << "First Name: ";
+	std::cout << contact.getFirstName() << std::endl;
+	std::cout << "Last Name: ";
+	std::cout << contact.getLastName() << std::endl;
+	std::cout << "Nickname: ";
+	std::cout << contact.getNickName() << std::endl;
+	std::cout << "Login: ";
+	std::cout << contact.getLogin() << std::endl;
+	std::cout << "Postal Address: ";
+	std::cout << contact.getPostalAddress() << std::endl;
+	std::cout << "Email Address: ";
+	std::cout << contact.getEmailAddress() << std::endl;
+	std::cout << "Phone number: ";
+	std::cout << contact.getPhoneNumber() << std::endl;
+	std::cout << "Birthday date: ";
+	std::cout << contact.getBirthdayDate() << std::endl;
+	std::cout << "Favorite Meal: ";
+	std::cout << contact.getFavoriteMeal() << std::endl;
+	std::cout << "Underwear Color: ";
+	std::cout << contact.getUnderwearColor() << std::endl;
+	std::cout << "Darkest Secret: ";
+	std::cout << contact.getDarkestSecret() << std::endl;
+}
+
 
 void PhoneBook::_addContact(Contact contact)
 {

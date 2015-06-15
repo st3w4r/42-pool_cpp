@@ -14,6 +14,7 @@
 # define PHONEBOOK_CLASS_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include "Contact.class.hpp"
 
@@ -37,11 +38,13 @@ class PhoneBook {
 		void _exitPhoneBook(void);
 
 		void _interpretCommand(std::string cmd);
-		void _displayOneContact(Contact contact) const;
-		void _displaySearchContact(void) const;
+		void _displayOneContact(Contact contact);
+		void _displayAllOneContact(Contact contact) const;
+		void _displaySearchContact(void);
 
 		void _displayAddContact(void);
 		void _readGetLine(std::string *strIn);
+		std::string _resizeString(std::string str);
 };
 
 #endif //PHONEBOOK_CLASS_HP
