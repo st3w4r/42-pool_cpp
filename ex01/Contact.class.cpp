@@ -52,7 +52,7 @@ int		Contact::getIndex(void) const {
 	return this->_index;
 }
 
-std::string Contact::getfirstName(void) const {
+std::string Contact::getFirstName(void) const {
 	return this->_firstName;
 }
 
@@ -101,7 +101,7 @@ void Contact::setIndex(int index) {
 	this->_index = index;
 }
 
-void Contact::setfirstName(std::string firstName) {
+void Contact::setFirstName(std::string firstName) {
 	this->_firstName = firstName;
 }
 

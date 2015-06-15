@@ -24,8 +24,9 @@ void PhoneBook::start(void) {
 	std::string buf;
 
 	std::cout << "[PHONE BOOK] cmd: ";
-	std::getline(std::cin, buf);
+	PhoneBook::_readGetLine(&buf);
 	PhoneBook::_interpretCommand(buf);
+
 	return PhoneBook::start();
 }
 
@@ -33,7 +34,7 @@ void PhoneBook::_interpretCommand(std::string cmd) {
 	if (cmd.compare("ADD") == 0)
 		PhoneBook::_displayAddContact();
 	else if (cmd.compare("SEARCH") == 0)
-		return;
+		PhoneBook::_displaySearchContact();
 	else if (cmd.compare("EXIT") == 0)
 		return;
 	return;
@@ -55,27 +56,27 @@ void PhoneBook::_displayAddContact(void) {
 	std::string darkestSecret;
 
 	std::cout << "First Name: ";
-	std::getline(std::cin, firstName);
+	PhoneBook::_readGetLine(&firstName);
 	std::cout << "Last Name: ";
-	std::getline(std::cin, lastName);
+	PhoneBook::_readGetLine(&lastName);
 	std::cout << "Nickname: ";
-	std::getline(std::cin, nickName);
+	PhoneBook::_readGetLine(&nickName);
 	std::cout << "Login: ";
-	std::getline(std::cin, login);
+	PhoneBook::_readGetLine(&login);
 	std::cout << "Postal Address: ";
-	std::getline(std::cin, postalAddress);
+	PhoneBook::_readGetLine(&postalAddress);
 	std::cout << "Email Address: ";
-	std::getline(std::cin, emailAddress);
+	PhoneBook::_readGetLine(&emailAddress);
 	std::cout << "Phone number: ";
-	std::getline(std::cin, phoneNumber);
+	PhoneBook::_readGetLine(&phoneNumber);
 	std::cout << "Birthday date: ";
-	std::getline(std::cin, birthdayDate);
+	PhoneBook::_readGetLine(&birthdayDate);
 	std::cout << "Favorite Meal: ";
-	std::getline(std::cin, favoriteMeal);
+	PhoneBook::_readGetLine(&favoriteMeal);
 	std::cout << "Underwear Color: ";
-	std::getline(std::cin, underwearColor);
+	PhoneBook::_readGetLine(&underwearColor);
 	std::cout << "Darkest Secret: ";
-	std::getline(std::cin, darkestSecret);
+	PhoneBook::_readGetLine(&darkestSecret);
 
 	contact.initContact(firstName, lastName, nickName, login,
 		postalAddress, emailAddress, phoneNumber, birthdayDate, favoriteMeal,
@@ -84,16 +85,43 @@ void PhoneBook::_displayAddContact(void) {
 	return;
 }
 
+void PhoneBook::_readGetLine(std::string *strIn)
+{
+	if (!(std::getline(std::cin, *strIn)))
+		exit(0);
+}
+
+void PhoneBook::_displaySearchContact(void) const {
+
+	for (int i = 0; i < this->_nbContact; i++)
+		PhoneBook::_displayOneContact(_arrContact[i]);
+}
+
+void PhoneBook::_displayOneContact(Contact contact) const {
+	std::cout << contact.getIndex();
+	std::cout << "|";
+	std::cout << contact.getFirstName();
+	std::cout << "|";
+	std::cout << contact.getLastName();
+	std::cout << "|";
+	std::cout << contact.getNickName();
+	std::cout << std::endl;
+}
+
 void PhoneBook::_addContact(Contact contact)
 {
-	if (this->_nbContact > 8)
-		return;
-	contact.setIndex(this->_nbContact);
-	this->_arrContact[this->_nbContact] = contact;
-	this->_nbContact++;
+	if (this->_nbContact < 8)
+	{
+		contact.setIndex(this->_nbContact);
+		this->_arrContact[this->_nbContact] = contact;
+		this->_nbContact++;
+	}
 	return;
 }
 /*
+index, first name, last name and nickname.
+___
+
 first name, last name, nickname,
 login, postal address, email address, phone number, birthday date, favorite
 meal, underwear color and darkest secret

@@ -35,9 +35,13 @@ class PhoneBook {
 
 		void _searchContact(void);
 		void _exitPhoneBook(void);
+
 		void _interpretCommand(std::string cmd);
+		void _displayOneContact(Contact contact) const;
+		void _displaySearchContact(void) const;
 
 		void _displayAddContact(void);
+		void _readGetLine(std::string *strIn);
 };
 
 #endif //PHONEBOOK_CLASS_HP

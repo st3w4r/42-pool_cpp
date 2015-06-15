@@ -36,7 +36,7 @@ class Contact {
 
 		//__Getter__
 		int getIndex(void) const;
-		std::string getfirstName(void) const;
+		std::string getFirstName(void) const;
 		std::string getLastName(void) const;
 		std::string getNickName(void) const;
 		std::string getLogin(void) const;
@@ -50,7 +50,7 @@ class Contact {
 
 		//__Setter__
 		void setIndex(int index);
-		void setfirstName(std::string firstName);
+		void setFirstName(std::string firstName);
 		void setLastName(std::string lastName);
 		void setNickName(std::string nickName);
 		void setLogin(std::string login);
