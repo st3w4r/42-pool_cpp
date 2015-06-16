@@ -33,7 +33,7 @@ void startReplace(std::string fileName, std::string s1, std::string s2)
 	std::string strTmp;
 	while (std::getline(ifs, strTmp))
 	{
-		if ((size = strTmp.find(s1)) != std::string::npos )
+		while ((size = strTmp.find(s1)) != std::string::npos)
 			strTmp.replace(strTmp.find(s1), s2.length(), s2);
 		ofs << strTmp << std::endl;
 	}
