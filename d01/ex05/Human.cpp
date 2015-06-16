@@ -14,7 +14,7 @@
 
 Human::Human()
 {
-	_brain = Brain();
+	// _brain = Brain();
 	return;
 }
 
@@ -23,7 +23,7 @@ Human::~Human()
 	return;
 }
 
-std::string Human::identify()
+std::string Human::identify() const
 {
 	std::stringstream ss;
 
@@ -31,7 +31,7 @@ std::string Human::identify()
 	return ss.str();
 }
 
-Brain &Human::getBrain()
+const Brain &Human::getBrain()
 {
 	return this->_brain;
 }

@@ -20,14 +20,14 @@
 class Human {
 
 	private:
-		Brain _brain;
+		const Brain _brain;
 
 	public:
 		Human();
 		~Human();
 
-		Brain &getBrain();
-		std::string identify();
+		const Brain &getBrain();
+		std::string identify() const;
 };
 
 #endif // HUMAN_HPP
