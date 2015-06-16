@@ -22,4 +22,5 @@ int main(void)
 
 	std::cout << *ptrStr << std::endl;
 	std::cout << refStr << std::endl;
+	return (0);
 }
