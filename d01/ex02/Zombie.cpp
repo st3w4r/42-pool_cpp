@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybarbier <ybarbier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/16 10:20:27 by ybarbier          #+#    #+#             */
-/*   Updated: 2015/06/16 10:20:28 by ybarbier         ###   ########.fr       */
+/*   Created: 2015/06/16 11:05:22 by ybarbier          #+#    #+#             */
+/*   Updated: 2015/06/16 11:05:24 by ybarbier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "Zombie.hpp"
 
-void ponyOnTheStack()
+Zombie::Zombie(std::string name, std::string type) : _name(name), _type(type)
 {
-	Pony ponyStack = Pony("PonyStack");
+	std::cout << "New Zombie" << std::endl;
+	return;
 }
 
-Pony *ponyOnTheHeap()
+Zombie::~Zombie()
 {
-	Pony *ponyHeap = new Pony("PonyHeap");
-	return (ponyHeap);
+	std::cout << "Zombie DEAD" << std::endl;
+	return;
 }
 
-int main()
+void Zombie::announce() const
 {
-	Pony *ponyHeap = ponyOnTheHeap();
-
-	ponyOnTheStack();
-	delete ponyHeap;
-	std::cout << "Is Destroy" << std::endl;
-	return (0);
+	std::cout << "<" << this->_name << " (" << this->_type << ")>"
+				<< " Braiiiiiiinnnssss..." << std::endl;
 }

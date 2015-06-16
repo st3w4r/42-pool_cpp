@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybarbier <ybarbier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/16 10:20:27 by ybarbier          #+#    #+#             */
-/*   Updated: 2015/06/16 10:20:28 by ybarbier         ###   ########.fr       */
+/*   Created: 2015/06/16 11:05:59 by ybarbier          #+#    #+#             */
+/*   Updated: 2015/06/16 11:06:00 by ybarbier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIE_EVENT_HPP
+# define ZOMBIE_EVENT_HPP
 
-void ponyOnTheStack()
-{
-	Pony ponyStack = Pony("PonyStack");
-}
+#include <iostream>
+#include <string>
+#include "Zombie.hpp"
 
-Pony *ponyOnTheHeap()
-{
-	Pony *ponyHeap = new Pony("PonyHeap");
-	return (ponyHeap);
-}
+class ZombieEvent {
 
-int main()
-{
-	Pony *ponyHeap = ponyOnTheHeap();
+	private:
+		std::string _zombieType;
+		std::string _arrNames[10];
 
-	ponyOnTheStack();
-	delete ponyHeap;
-	std::cout << "Is Destroy" << std::endl;
-	return (0);
-}
+	public:
+		ZombieEvent();
+		ZombieEvent(std::string zombieType);
+		~ZombieEvent();
+		void setZombieType(std::string zombieType);
+		Zombie *newZombie(std::string name);
+};
+
+#endif // ZOMBIE_EVENT_HPP

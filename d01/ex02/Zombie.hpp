@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybarbier <ybarbier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/16 10:20:27 by ybarbier          #+#    #+#             */
-/*   Updated: 2015/06/16 10:20:28 by ybarbier         ###   ########.fr       */
+/*   Created: 2015/06/16 11:05:28 by ybarbier          #+#    #+#             */
+/*   Updated: 2015/06/16 11:05:29 by ybarbier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-void ponyOnTheStack()
-{
-	Pony ponyStack = Pony("PonyStack");
-}
+#include <string>
+#include <iostream>
 
-Pony *ponyOnTheHeap()
-{
-	Pony *ponyHeap = new Pony("PonyHeap");
-	return (ponyHeap);
-}
+class Zombie {
 
-int main()
-{
-	Pony *ponyHeap = ponyOnTheHeap();
+	private:
+		std::string _name;
+		std::string _type;
 
-	ponyOnTheStack();
-	delete ponyHeap;
-	std::cout << "Is Destroy" << std::endl;
-	return (0);
-}
+	public:
+		Zombie(std::string _name, std::string _type);
+		~Zombie();
+		void announce() const;
+};
+
+#endif // ZOMBIE_HPP

@@ -5,30 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybarbier <ybarbier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/06/16 10:20:27 by ybarbier          #+#    #+#             */
-/*   Updated: 2015/06/16 10:20:28 by ybarbier         ###   ########.fr       */
+/*   Created: 2015/06/16 11:06:14 by ybarbier          #+#    #+#             */
+/*   Updated: 2015/06/16 11:06:15 by ybarbier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Pony.hpp"
+#include "ZombieEvent.hpp"
 
-void ponyOnTheStack()
+int main(void)
 {
-	Pony ponyStack = Pony("PonyStack");
-}
+	ZombieEvent event = ZombieEvent();
+	event.setZombieType("Mechant");
 
-Pony *ponyOnTheHeap()
-{
-	Pony *ponyHeap = new Pony("PonyHeap");
-	return (ponyHeap);
-}
+	Zombie *z1 = event.newZombie("Paul");
+	Zombie *z2 = event.newZombie("Jack");
+	z1->announce();
+	z2->announce();
 
-int main()
-{
-	Pony *ponyHeap = ponyOnTheHeap();
+	delete z1;
+	delete z2;
 
-	ponyOnTheStack();
-	delete ponyHeap;
-	std::cout << "Is Destroy" << std::endl;
 	return (0);
 }
