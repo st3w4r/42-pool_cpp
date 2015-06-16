@@ -15,7 +15,6 @@
 
 #include <string>
 
-
 class Weapon {
 
 	private:
@@ -25,7 +24,8 @@ class Weapon {
 		Weapon(std::string type);
 		~Weapon();
 
-		std::string setType();
+		void setType(std::string type);
+		const std::string getType() const;
 
 };
 
