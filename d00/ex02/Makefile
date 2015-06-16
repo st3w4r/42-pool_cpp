@@ -6,13 +6,13 @@
 #    By: ybarbier <ybarbier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/15 10:35:59 by ybarbier          #+#    #+#              #
-#    Updated: 2015/06/15 10:36:00 by ybarbier         ###   ########.fr        #
+#    Updated: 2015/06/16 23:34:51 by ybarbier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #____________CONFIG____________#
 
-NAME = phonebook
+NAME = account
 PATH_SRC = ./
 PATH_OBJ = ./
 PATH_INC = ./
@@ -26,9 +26,8 @@ LIBS =
 
 #____________FILES____________#
 
-SRC =	main.cpp \
-		Contact.class.cpp \
-		PhoneBook.class.cpp
+SRC =	tests.cpp \
+		Account.class.cpp
 
 
 OBJ = $(addprefix $(PATH_SRC), $(SRC:.cpp=.o))
