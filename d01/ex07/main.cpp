@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cerr << "Need two arguments" << std::endl;
+		std::cerr << "Usage: filename StringFind StringReplace" << std::endl;
 		exit(1);
 	}
 
