@@ -14,7 +14,6 @@
 
 Human::Human()
 {
-	// _brain = Brain();
 	return;
 }
 
