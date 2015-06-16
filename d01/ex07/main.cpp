@@ -29,12 +29,15 @@ void startReplace(std::string fileName, std::string s1, std::string s2)
 		exit(1);
 	}
 
-	std::string::size_type size;
+	std::string::size_type pos;
 	std::string strTmp;
 	while (std::getline(ifs, strTmp))
 	{
-		while ((size = strTmp.find(s1)) != std::string::npos)
-			strTmp.replace(strTmp.find(s1), s2.length(), s2);
+		while ((pos = strTmp.find(s1)) != std::string::npos)
+		{
+			strTmp.erase(pos, s1.length());
+			strTmp.insert(pos, s2);
+		}
 		ofs << strTmp << std::endl;
 	}
 }
