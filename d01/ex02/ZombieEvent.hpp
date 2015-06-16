@@ -23,12 +23,15 @@ class ZombieEvent {
 		std::string _zombieType;
 		std::string _arrNames[10];
 
+		void _initNames();
+
 	public:
 		ZombieEvent();
 		ZombieEvent(std::string zombieType);
 		~ZombieEvent();
 		void setZombieType(std::string zombieType);
 		Zombie *newZombie(std::string name);
+		Zombie *randomChump();
 };
 
 #endif // ZOMBIE_EVENT_HPP
