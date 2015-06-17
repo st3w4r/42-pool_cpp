@@ -6,7 +6,7 @@
 /*   By: ybarbier <ybarbier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 19:35:41 by ybarbier          #+#    #+#             */
-/*   Updated: 2015/06/16 19:35:42 by ybarbier         ###   ########.fr       */
+/*   Updated: 2015/06/17 19:28:16 by ybarbier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 void startReplace(std::string fileName, std::string s1, std::string s2)
 {
+	if (s1.length() <= 0 || s2.length() <= 0)
+	{
+		std::cerr << "String is empty" << std::endl;
+		exit(1);
+	}
+
 	std::ifstream ifs(fileName);
 	if (!ifs)
 	{
@@ -49,7 +55,7 @@ int main(int argc, char **argv)
 		std::cerr << "Usage: filename StringFind StringReplace" << std::endl;
 		exit(1);
 	}
-
+	
 	std::string filename(argv[1]);
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
