@@ -39,10 +39,12 @@ void startReplace(std::string fileName, std::string s1, std::string s2)
 	std::string strTmp;
 	while (std::getline(ifs, strTmp))
 	{
-		while ((pos = strTmp.find(s1)) != std::string::npos)
+		size_t posStart = 0;
+		while ((pos = strTmp.find(s1, posStart)) != std::string::npos)
 		{
 			strTmp.erase(pos, s1.length());
 			strTmp.insert(pos, s2);
+			posStart = pos + s2.length();
 		}
 		ofs << strTmp << std::endl;
 	}
@@ -55,7 +57,7 @@ int main(int argc, char **argv)
 		std::cerr << "Usage: filename StringFind StringReplace" << std::endl;
 		exit(1);
 	}
-	
+
 	std::string filename(argv[1]);
 	std::string s1(argv[2]);
 	std::string s2(argv[3]);
