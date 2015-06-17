@@ -18,7 +18,7 @@
 class Fixed {
 
 	private:
-		int _fixed;
+		int _n;
 		static const int _fractionalBits = 8;
 
 	public:
