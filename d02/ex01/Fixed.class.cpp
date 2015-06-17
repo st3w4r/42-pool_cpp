@@ -31,8 +31,6 @@ Fixed::Fixed(int const n) : _n(n << this->_fractionalBits)
 	return;
 }
 
-
-#include <cmath>
 Fixed::Fixed(float const n) : _n(roundf(n * (1 << this->_fractionalBits)))
 {
 	std::cout << "Float constructor called" << std::endl;
