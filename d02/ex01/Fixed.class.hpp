@@ -6,7 +6,7 @@
 /*   By: ybarbier <ybarbier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/17 10:46:08 by ybarbier          #+#    #+#             */
-/*   Updated: 2015/06/17 10:46:09 by ybarbier         ###   ########.fr       */
+/*   Updated: 2015/06/17 17:15:17 by ybarbier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_CLASS_HPP
 
 #include <iostream>
+#include <cmath>
 
 class Fixed {
 
