@@ -25,6 +25,9 @@ int main(void)
 	std::cout << "_______NINJA_______" << std::endl;
 	NinjaTrap *n1 = new NinjaTrap("Boss");
 
+	n1->takeDamage(20);
+	n1->beRepaired(10);
+
 	n1->ninjaShoebox(*n1);
 	n1->ninjaShoebox(*f1);
 	n1->ninjaShoebox(*s1);
