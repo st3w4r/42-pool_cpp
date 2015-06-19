@@ -14,6 +14,9 @@
 #ifndef ENEMY_HPP
 # define ENEMY_HPP
 
+#include <iostream>
+#include <string>
+
 class Enemy
 {
 	private:
@@ -34,7 +37,7 @@ class Enemy
 		virtual void takeDamage(int);
 
 		void setType(std::string);
-		void settHP(int);
+		void setHP(int);
 };
 
 #endif // END: ENEMY_HPP

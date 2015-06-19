@@ -10,4 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef RAD_SCORPION_HPP
+# define RAD_SCORPION_HPP
 
+#include <iostream>
+#include <string>
+#include "Enemy.hpp"
+
+class RadScorpion : public Enemy
+{
+	private:
+	public:
+		RadScorpion(void);
+		RadScorpion(RadScorpion const & src);
+		~RadScorpion(void);
+
+		RadScorpion & operator=(RadScorpion const & rhs);
+
+};
+
+#endif // END: RAD_SCORPION_HPP

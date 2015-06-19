@@ -11,3 +11,24 @@
 /* ************************************************************************** */
 
 
+#ifndef SUPER_MUTANT_HPP
+# define SUPER_MUTANT_HPP
+
+#include <iostream>
+#include <string>
+#include "Enemy.hpp"
+
+class SuperMutant : public Enemy
+{
+	private:
+	public:
+		SuperMutant(void);
+		SuperMutant(SuperMutant const & src);
+		~SuperMutant(void);
+
+		SuperMutant & operator=(SuperMutant const & rhs);
+
+		void takeDamage(int);
+};
+
+#endif // END: SUPER_MUTANT_HPP
