@@ -29,6 +29,7 @@ class NinjaTrap : public virtual ClapTrap
 		NinjaTrap(NinjaTrap const & src);
 		~NinjaTrap(void);
 
+		void ninjaShoebox(ClapTrap & clap);
 		void ninjaShoebox(NinjaTrap & ninja);
 		void ninjaShoebox(FragTrap & frag);
 		void ninjaShoebox(ScavTrap & scav);

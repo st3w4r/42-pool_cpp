@@ -75,6 +75,13 @@ void NinjaTrap::_initValue(void)
 	this->_armorDamageReduction = 0;
 }
 
+
+void NinjaTrap::ninjaShoebox(ClapTrap & clap)
+{
+	clap.meleeAttack("Moray");
+	clap.rangedAttack("Moray");
+}
+
 void NinjaTrap::ninjaShoebox(NinjaTrap & ninja)
 {
 	ninja.meleeAttack("The King");

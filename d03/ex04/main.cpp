@@ -123,6 +123,8 @@ int main(void)
 
 		std::cout << "_______NINJA_______" << std::endl;
 		NinjaTrap *n1 = new NinjaTrap("Boss");
+		std::cout << "_______CLAP_______" << std::endl;
+		ClapTrap *c1 = new ClapTrap();
 
 		n1->takeDamage(20);
 		n1->beRepaired(10);
@@ -130,7 +132,10 @@ int main(void)
 		n1->ninjaShoebox(*n1);
 		n1->ninjaShoebox(*f1);
 		n1->ninjaShoebox(*s1);
+		n1->ninjaShoebox(*c1);
 
+		std::cout << "_______CLAP_______" << std::endl;
+		delete c1;
 		std::cout << "_______NINJA_______" << std::endl;
 		delete n1;
 		std::cout << "_______SC4V_______" << std::endl;
