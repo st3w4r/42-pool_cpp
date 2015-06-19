@@ -22,6 +22,8 @@ ClapTrap::ClapTrap(void)
 ClapTrap::ClapTrap(ClapTrap const & src)
 {
 	*this = src;
+	std::srand(std::time(NULL));
+	std::cout << "ClapTrap BOOT" << std::endl;
 	return;
 }
 
@@ -101,96 +103,3 @@ int ClapTrap::getHitPoints()
 {
 	return this->_hitPoints;
 }
-/*
-// __Getter__
-std::string getName()
-{
-	return this->_name;
-}
-
-int ClapTrap::getHitPoints()
-{
-	return this->_hitPoints;
-}
-
-int ClapTrap::getMaxHitPoints()
-{
-	return this->_macHitsPoints;
-}
-
-int ClapTrap::getEnergyPoints()
-{
-	return this->_energyPoints;
-}
-
-int ClapTrap::getMaxEnergyPoints()
-{
-	return this->_maxEnergyPoints;
-}
-
-int ClapTrap::getLevel()
-{
-	return this->_level;
-}
-
-int ClapTrap::getMeleattackDamage()
-{
-	return this->_meleattackDamage;
-}
-
-int ClapTrap::getRangedAttackDamage()
-{
-	return this->_rangedAttackDamage;
-}
-
-int ClapTrap::getArmorDamageReduction()
-{
-	return this->_armorDamageReduction;
-}
-
-
-// __Setter__
-void setName(std::string name)
-{
-	this->_name = name;
-}
-
-void ClapTrap::setHitPoints(int hitsPoints)
-{
-	this->_hitsPoints = hitsPoints;
-}
-
-void ClapTrap::setMaxHitPoints(int maxHitsPoints)
-{
-	this->_maxHitsPoints = maxHitsPoints;
-}
-
-void ClapTrap::setEnergyPoints(int energyPoints)
-{
-	this->_energyPoints = energyPoints;
-}
-
-void ClapTrap::setMaxEnergyPoints(int maxEnergyPoints)
-{
-	this->_maxEnergyPoints = maxEnergyPoints;
-}
-
-void ClapTrap::setLevel(int level)
-{
-	this->_level = level;
-}
-
-void ClapTrap::setMeleattackDamage(int meleattackDamage)
-{
-	this->_meleattackDamage = meleattackDamage;
-}
-
-void ClapTrap::setRangedAttackDamage(int rangedAttackDamage)
-{
-	this->_rangedAttackDamage = rangedAttackDamage;
-}
-
-void ClapTrap::setArmorDamageReduction(int armorDamageReduction)
-{
-	this->_armorDamageReduction = armorDamageReduction;
-}*/

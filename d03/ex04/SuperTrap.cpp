@@ -16,7 +16,7 @@ NinjaTrap::NinjaTrap(void)
 {
 	this->_initValue();
 	std::srand(std::time(NULL));
-	std::cout << "I am cloaking..." << std::endl;
+	std::cout << "I am SUPER Hero" << std::endl;
 	return;
 }
 
@@ -25,13 +25,15 @@ NinjaTrap::NinjaTrap(std::string name)
 	std::srand(std::time(NULL));
 	this->_initValue();
 	this->_name = name;
-	std::cout << "I am a best Ninja ever World..." << std::endl;
+	std::cout << "I am SUPER Hero" << std::endl;
 	return;
 }
 
 NinjaTrap::NinjaTrap(NinjaTrap const & src)
 {
 	*this = src;
+	std::srand(std::time(NULL));
+	std::cout << "I am SUPER Hero" << std::endl;
 	return;
 }
 

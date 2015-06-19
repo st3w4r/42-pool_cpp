@@ -31,6 +31,8 @@ FragTrap::FragTrap(std::string name)
 FragTrap::FragTrap(FragTrap const & src)
 {
 	*this = src;
+	std::srand(std::time(NULL));
+	std::cout << "I am cloaking..." << std::endl;
 	return;
 }
 

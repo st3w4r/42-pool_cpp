@@ -31,6 +31,8 @@ ScavTrap::ScavTrap(std::string name)
 ScavTrap::ScavTrap(ScavTrap const & src)
 {
 	*this = src;
+	std::srand(std::time(NULL));
+	std::cout << "Enterrrrr the CHAMPION!" << std::endl;
 	return;
 }
 

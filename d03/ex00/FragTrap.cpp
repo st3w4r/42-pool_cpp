@@ -44,6 +44,8 @@ FragTrap::FragTrap(std::string name) : _name(name),
 FragTrap::FragTrap(FragTrap const & src)
 {
 	*this = src;
+	std::srand(std::time(NULL));
+	std::cout << "I am cloaking..." << std::endl;
 	return;
 }
 
