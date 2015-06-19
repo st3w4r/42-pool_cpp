@@ -39,10 +39,10 @@ class Character
 		void equip(AWeapon*);
 		void attack(Enemy*);
 
-
 		//__Getter__
 		std::string const getName() const;
 		int getAP() const;
+		AWeapon *getWeapon() const;
 
 		//__Setter__
 		// void setName(std::string);
@@ -50,7 +50,7 @@ class Character
 
 };
 
-// std::ostream & operator<<(std::ostream & o, Character const & rhs);
+std::ostream & operator<<(std::ostream & o, Character const & rhs);
 
 #endif // END: CHARACTER_HPP
 

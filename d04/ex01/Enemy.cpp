@@ -35,6 +35,8 @@ Enemy::~Enemy(void)
 
 Enemy & Enemy::operator=(Enemy const & rhs)
 {
+	this->_HP = rhs._HP;
+	this->_type = rhs._type;
 	return *this;
 }
 

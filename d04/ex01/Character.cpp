@@ -23,7 +23,7 @@ Character::Character(Character const & src)
 	return;
 }
 
-Character(std::string const & name) : _name(name), _ap(40), _weapon(NULL)
+Character::Character(std::string const & name) : _name(name), _ap(40), _weapon(NULL)
 {
 	return;
 }
@@ -36,6 +36,9 @@ Character::~Character(void)
 
 Character & Character::operator=(Character const & rhs)
 {
+	this->_name = rhs._name;
+	this->_ap = rhs._ap;
+	this->_weapon = rhs._weapon;
 	return *this;
 }
 
@@ -44,7 +47,7 @@ void Character::recoverAP()
 	if ((this->_ap + 10) > 40)
 		this->_ap = 40;
 	else
-		tis->_ap += 10;
+		this->_ap += 10;
 }
 
 void Character::equip(AWeapon* weapon)
@@ -54,25 +57,20 @@ void Character::equip(AWeapon* weapon)
 
 void Character::attack(Enemy* enemy)
 {
-	if (enemy)
+	if (!enemy || !this->_weapon)
+		return;
+	if (this->_ap >= this->_weapon->getAPCost())
 	{
-		if (this->_weapon)
-		{
-			if (this->_ap >= this->_weapon->getAPCost())
-			{
-				this->_ap -= this->_weapon->getAPCost();
-				this->_weapon->atack();
-				enemy->takeDamage(this->_weapon->damage);
+		std::cout << _name << " attacks " << enemy->getType() << " with a "
+		<< this->_weapon->getName() << std::endl;
 
-			std::cout << enemy->getName() << " attacks " << enemy->getType() << " with a "
-				<< this->_weapon->getName();
+		this->_ap -= this->_weapon->getAPCost();
+		this->_weapon->attack();
+		enemy->takeDamage(this->_weapon->getDamage());
 
-				if (enemy->getHP <= 0)
-					delete enemy;
-			}
-		}
+		if (enemy->getHP() <= 0)
+			delete enemy;
 	}
-
 }
 
 
@@ -82,20 +80,30 @@ int Character::getAP() const
 	return this->_ap;
 }
 
-std::string Character::getName() const
+std::string const Character::getName() const
 {
 	return this->_name;
 }
 
+AWeapon * Character::getWeapon() const
+{
+	return this->_weapon;
+}
 
-// std::ostream & operator<<(std::ostream & o, Character const & rhs)
-// {
-// 	if (rhs.get)
-// 	NAME has AP_NUMBER AP and wields a WEAPON_NAME
-//
-// 	o << "I am " << rhs.getName() << " and I like otters !" << std::endl;
-// 	return o;
-// }
+
+std::ostream & operator<<(std::ostream & o, Character const & rhs)
+{
+	if (rhs.getWeapon() != NULL)
+	{
+		o << rhs.getName() << " has " << rhs.getAP() << " and wields a "
+			<< rhs.getWeapon()->getName() << std::endl;
+	}
+	else
+	{
+		o << rhs.getName() << " has " << rhs.getAP() << " and is unarmed" << std::endl;
+	}
+	return o;
+}
 
 
 // void Character::setAP(int ap)

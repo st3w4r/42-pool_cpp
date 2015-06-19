@@ -17,7 +17,7 @@ AWeapon::AWeapon(void)
 	return;
 }
 
-AWeapon::AWeapon(std::string const & name, int apcost, int damage) : _name(name), _damage(damage),  _apcost(apcost)
+AWeapon::AWeapon(std::string const & name, int damage, int apcost) : _name(name), _damage(damage),  _apcost(apcost)
 {
 	return;
 }

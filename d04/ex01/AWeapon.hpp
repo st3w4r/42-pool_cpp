@@ -27,7 +27,7 @@ class AWeapon
 		AWeapon(void);
 	public:
 		AWeapon(AWeapon const & src);
-		AWeapon(std::string const & name, int apcost, int damage);
+		AWeapon(std::string const & name, int, int);
 
 		virtual ~AWeapon(void);
 
