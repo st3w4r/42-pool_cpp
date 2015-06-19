@@ -18,7 +18,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
 	private:
 		void _initValue(void);

@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "SuperTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
@@ -136,6 +137,21 @@ int main(void)
 		delete s1;
 		std::cout << "_______FR4G_______" << std::endl;
 		delete f1;
+	}
+
+	std::cout << std::endl << "############----EX04----###############" << std::endl << std::endl;
+	{
+
+		SuperTrap *s1 = new SuperTrap("Fat Super Hero");
+		s1->rangedAttack("You");
+		s1->meleeAttack("Silm Man");
+
+
+		ScavTrap sc1 = ScavTrap("The Scav");
+		s1->ninjaShoebox(sc1);
+		s1->vaulthunter_dot_exe("A Peon");
+
+		delete s1;
 	}
 	return (0);
 }

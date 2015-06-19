@@ -12,82 +12,56 @@
 
 #include "SuperTrap.hpp"
 
-NinjaTrap::NinjaTrap(void)
+SuperTrap::SuperTrap(void)
 {
 	this->_initValue();
 	std::srand(std::time(NULL));
-	std::cout << "I am SUPER Hero" << std::endl;
+	std::cout << "Je suis un SUPER Hero Si t'as pas mal , tu vaut que dalle" << std::endl;
 	return;
 }
 
-NinjaTrap::NinjaTrap(std::string name)
+SuperTrap::SuperTrap(std::string name)
 {
 	std::srand(std::time(NULL));
 	this->_initValue();
 	this->_name = name;
-	std::cout << "I am SUPER Hero" << std::endl;
+	std::cout << "Je suis un SUPER Hero Si t'as pas mal , tu vaut que dalle" << std::endl;
 	return;
 }
 
-NinjaTrap::NinjaTrap(NinjaTrap const & src)
+SuperTrap::SuperTrap(SuperTrap const & src)
 {
 	*this = src;
 	std::srand(std::time(NULL));
-	std::cout << "I am SUPER Hero" << std::endl;
+	std::cout << "Je suis un SUPER Hero Si t'as pas mal , tu vaut que dalle" << std::endl;
 	return;
 }
 
-NinjaTrap::~NinjaTrap(void)
+SuperTrap::~SuperTrap(void)
 {
-	std::cout << "Or not !!!!" << std::endl;
+	std::cout << "Mort définitive. Mort infinie... infinitive... !!!!" << std::endl;
 	return;
 }
 
-// __Functions__
-
-void NinjaTrap::rangedAttack(std::string const & target)
+void SuperTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "Ninja "
-			<< this->_name << " attacks "
-			<< target << " at range, causing "
-			<< this->_rangedAttackDamage << " points of damage !" << std::endl;
-
+	FragTrap::rangedAttack(target);
 }
 
-void NinjaTrap::meleeAttack(std::string const & target)
+void SuperTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "Ninja "
-			<< this->_name << " attacks "
-			<< target << " at mele, causing "
-			<< this->_meleAttackDamage << " points of damage !" << std::endl;
+	NinjaTrap::meleeAttack(target);
 }
 
-void NinjaTrap::_initValue(void)
+void SuperTrap::_initValue(void)
 {
-	this->_name = "NinjaTrap";
-	this->_hitPoints = 60;
-	this->_maxHitPoints = 60;
+	this->_name = "SuperTrap";
+	this->_hitPoints = 100;
+	this->_maxHitPoints = 100;
 	this->_energyPoints = 120;
 	this->_maxEnergyPoints = 120;
 	this->_level = 1;
 	this->_meleAttackDamage = 60;
-	this->_rangedAttackDamage = 5;
-	this->_armorDamageReduction = 0;
-}
-
-void NinjaTrap::ninjaShoebox(NinjaTrap & ninja)
-{
-	ninja.meleeAttack("The King");
-	ninja.rangedAttack("The King");
-}
-
-void NinjaTrap::ninjaShoebox(FragTrap & frag)
-{
-	frag.meleeAttack("mouse");
-	frag.vaulthunter_dot_exe("mouse");
-}
-void NinjaTrap::ninjaShoebox(ScavTrap & scav)
-{
-	scav.rangedAttack("YOU");
-	scav.challengeNewcomer("YOU");
+	this->_rangedAttackDamage = 20;
+	this->_armorDamageReduction = 5;
 }
