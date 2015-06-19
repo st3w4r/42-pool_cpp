@@ -14,16 +14,17 @@
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-#include <iostring>
+// #include <iostring>
 #include <string>
 #include "AWeapon.hpp"
+#include "Enemy.hpp"
 
 class Character
 {
 	private:
 		std::string _name;
 		int _ap;
-		Aweapon *_weapon;
+		AWeapon *_weapon;
 
 	protected:
 		Character(void);
@@ -42,10 +43,14 @@ class Character
 		//__Getter__
 		std::string const getName() const;
 		int getAP() const;
+
 		//__Setter__
 		// void setName(std::string);
 		// void setAP(int);
+
 };
+
+// std::ostream & operator<<(std::ostream & o, Character const & rhs);
 
 #endif // END: CHARACTER_HPP
 

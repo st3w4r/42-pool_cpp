@@ -87,6 +87,17 @@ std::string Character::getName() const
 	return this->_name;
 }
 
+
+// std::ostream & operator<<(std::ostream & o, Character const & rhs)
+// {
+// 	if (rhs.get)
+// 	NAME has AP_NUMBER AP and wields a WEAPON_NAME
+//
+// 	o << "I am " << rhs.getName() << " and I like otters !" << std::endl;
+// 	return o;
+// }
+
+
 // void Character::setAP(int ap)
 // {
 // 	this->_ap = ap;
