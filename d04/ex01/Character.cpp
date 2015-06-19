@@ -95,12 +95,12 @@ std::ostream & operator<<(std::ostream & o, Character const & rhs)
 {
 	if (rhs.getWeapon() != NULL)
 	{
-		o << rhs.getName() << " has " << rhs.getAP() << " and wields a "
+		o << rhs.getName() << " has " << rhs.getAP() << " AP and wields a "
 			<< rhs.getWeapon()->getName() << std::endl;
 	}
 	else
 	{
-		o << rhs.getName() << " has " << rhs.getAP() << " and is unarmed" << std::endl;
+		o << rhs.getName() << " has " << rhs.getAP() << " AP and is unarmed" << std::endl;
 	}
 	return o;
 }
