@@ -104,14 +104,3 @@ std::ostream & operator<<(std::ostream & o, Character const & rhs)
 	}
 	return o;
 }
-
-
-// void Character::setAP(int ap)
-// {
-// 	this->_ap = ap;
-// }
-//
-// void Character::setName(std::string name)
-// {
-// 	this->_name = name;
-// }

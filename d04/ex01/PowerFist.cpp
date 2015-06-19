@@ -31,11 +31,6 @@ PowerFist::~PowerFist(void)
 
 PowerFist & PowerFist::operator=(PowerFist const & rhs)
 {
-	// this->_name = rhs.getName();
-	// this->_domage = rhs.getDamage();
-	// this->_apcost = rhs.getAPCost();
-	// this->setName(rhs.getName());
-	// this->setName(rhs.getName());
 	this->setName(rhs.getName());
 	this->setDamage(rhs.getDamage());
 	this->setAPCost(rhs.getAPCost());

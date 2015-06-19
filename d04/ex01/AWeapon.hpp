@@ -46,20 +46,3 @@ class AWeapon
 };
 
 #endif // END: AWEAPON_HPP
-
-// A weapon has a name, a number of damage points inflicted upon a hit, and a
-// shooting cost in AP (action points).
-/*
-class AWeapon
-{
-	private:
-		[...]
-	public:
-		AWeapon(std::string const & name, int apcost, int damage);
-		[...] ~AWeapon();
-		std::string [...] getName() const;
-		int getAPCost() const;
-		int getDamage() const;
-		[...] void attack() const = 0;
-};
-*/
