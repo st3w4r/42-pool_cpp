@@ -34,13 +34,13 @@ AssaultTerminator::~AssaultTerminator(void)
 
 AssaultTerminator & AssaultTerminator::operator=(AssaultTerminator const & rhs)
 {
+	(void)rhs;
 	return *this;
 }
 
 // __Interface__
 ISpaceMarine* AssaultTerminator::clone() const
 {
-	// AssaultTerminator *assaultTerminator = new AssaultTerminator;
 	return (new AssaultTerminator);
 }
 

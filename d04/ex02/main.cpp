@@ -37,7 +37,7 @@ int main()
 
 		std::cout << "____New Object Index_____" << std::endl;
 		std::cout << vlc->push(new AssaultTerminator) << std::endl;
-		std::cout << vlc->push(new AssaultTerminator) << std::endl;
+		std::cout << vlc->push(new TacticalMarine) << std::endl;
 
 		std::cout << vlc->getCount() << std::endl;
 
@@ -55,7 +55,7 @@ int main()
 		std::cout << vlc->getUnit(8) << std::endl;
 
 		std::cout << "____Delete_____" << std::endl;
-		// delete vlc;
+		delete vlc;
 		// delete bob;
 		// delete jim;
 	}

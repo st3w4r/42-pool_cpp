@@ -26,10 +26,15 @@ Squad::Squad(Squad const & src)
 
 Squad::~Squad(void)
 {
+	struct _sUnit *tmp = _listUnits;
+
 	while (_listUnits)
 	{
-		// delete _listUnits->spaceMarine;
+		delete _listUnits->spaceMarine;
 		_listUnits = _listUnits->next;
+		if (!_listUnits)
+			delete tmp;
+		// delete _listUnits->_sUnit;
 	}
 	return;
 }
@@ -84,7 +89,7 @@ int Squad::push(ISpaceMarine* spaceMarine)
 			_listUnits = newUnit;
 			return (this->getCount());
 		}
-		else if (_listUnits->spaceMarine == spaceMarine)
+		else if (this->alereadyExist(spaceMarine))
 			return (this->getCount());
 		else
 		{
@@ -97,4 +102,19 @@ int Squad::push(ISpaceMarine* spaceMarine)
 		return (this->getCount());
 	}
 	return this->getCount();
+}
+
+bool Squad::alereadyExist(ISpaceMarine * spaceMarine)
+{
+	struct _sUnit *beginList = this->_listUnits;
+
+	while (beginList)
+	{
+		if (beginList->spaceMarine == spaceMarine)
+		{
+			return true;
+		}
+		beginList = beginList->next;
+	}
+	return false;
 }

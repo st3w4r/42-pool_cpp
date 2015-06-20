@@ -33,14 +33,13 @@ TacticalMarine::~TacticalMarine(void)
 
 TacticalMarine & TacticalMarine::operator=(TacticalMarine const & rhs)
 {
+	(void)rhs;
 	return *this;
 }
 
 // __Interface__
 ISpaceMarine* TacticalMarine::clone() const
 {
-	// TacticalMarine *tacticalMarine = new TacticalMarine;
-	// tactialMarine = this;
 	return (new TacticalMarine);
 }
 

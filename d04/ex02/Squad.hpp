@@ -35,6 +35,7 @@ class Squad : public ISquad
 
 		Squad & operator=(Squad const & rhs);
 
+		bool alereadyExist(ISpaceMarine * spaceMarine);
 		//__Interface__
 		int getCount() const;
 		ISpaceMarine* getUnit(int) const;
