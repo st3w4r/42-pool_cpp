@@ -28,7 +28,7 @@ Squad::~Squad(void)
 {
 	while (_listUnits)
 	{
-		delete _listUnits->spaceMarine;
+		// delete _listUnits->spaceMarine;
 		_listUnits = _listUnits->next;
 	}
 	return;
