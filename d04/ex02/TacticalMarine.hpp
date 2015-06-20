@@ -28,10 +28,10 @@ class TacticalMarine : public ISpaceMarine
 		TacticalMarine & operator=(TacticalMarine const & rhs);
 
 		//__Interface__
-		ISpaceMarine* clone() const = 0;
-		void battleCry() const = 0;
-		void rangedAttack() const = 0;
-		void meleeAttack() const = 0;
+		ISpaceMarine* clone() const;
+		void battleCry() const;
+		void rangedAttack() const;
+		void meleeAttack() const;
 };
 
 #endif // END: TACTICAL_MARINE_HPP

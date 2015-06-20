@@ -40,9 +40,8 @@ AssaultTerminator & AssaultTerminator::operator=(AssaultTerminator const & rhs)
 // __Interface__
 ISpaceMarine* AssaultTerminator::clone() const
 {
-	AssaultTerminator *tacticalMarine = new AssaultTerminator;
-	// tactialMarine = this;
-	return (tacticalMarine);
+	// AssaultTerminator *assaultTerminator = new AssaultTerminator;
+	return (new AssaultTerminator);
 }
 
 void AssaultTerminator::battleCry() const

@@ -13,7 +13,7 @@
 #include "Squad.hpp"
 
 
-Squad::Squad(void)
+Squad::Squad(void) : _listUnits(NULL)
 {
 	return;
 }
@@ -36,6 +36,7 @@ Squad::~Squad(void)
 
 Squad & Squad::operator=(Squad const & rhs)
 {
+	_listUnits = rhs._listUnits;
 	return *this;
 }
 
@@ -75,16 +76,16 @@ int Squad::push(ISpaceMarine* spaceMarine)
 
 	if (spaceMarine)
 	{
-		// newUnit->index = (_listUnits->index + 1);
 		newUnit->spaceMarine = spaceMarine;
 		newUnit->next = NULL;
-
 		if (!_listUnits)
 		{
 			newUnit->index = 0;
 			_listUnits = newUnit;
-			return (0);
+			return (this->getCount());
 		}
+		else if (_listUnits->spaceMarine == spaceMarine)
+			return (this->getCount());
 		else
 		{
 			while (_listUnits->next)
@@ -92,7 +93,8 @@ int Squad::push(ISpaceMarine* spaceMarine)
 			newUnit->index = (_listUnits->index + 1);
 		}
 		_listUnits->next = newUnit;
+		_listUnits = beginList;
+		return (this->getCount());
 	}
-	_listUnits = beginList;
-	return (_listUnits->index);
+	return this->getCount();
 }

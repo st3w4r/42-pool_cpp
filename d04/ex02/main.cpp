@@ -13,20 +13,35 @@
 #include <iostream>
 #include <string>
 
+#include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
+#include "Squad.hpp"
+
 int main()
 {
 	ISpaceMarine* bob = new TacticalMarine;
 	ISpaceMarine* jim = new AssaultTerminator;
 	ISquad* vlc = new Squad;
-	vlc->push(bob);
-	vlc->push(jim);
-	for (int i = 0; i < vlc->getCount(); ++i)
-	{
-		ISpaceMarine* cur = vlc->getUnit(i);
-		cur->battleCry();
-		cur->rangedAttack();
-		cur->meleeAttack();
-	}
-	delete vlc;
+
+	std::cout << vlc->push(bob) << std::endl;
+	std::cout << vlc->getCount() << std::endl;
+	std::cout << vlc->push(jim) << std::endl;
+	std::cout << vlc->push(new AssaultTerminator) << std::endl;
+	std::cout << vlc->push(new AssaultTerminator) << std::endl;
+
+	// ISquad *s1 = new Squad;
+	// vlc->push(new AssaultTerminator);
+	// vlc->push(new AssaultTerminator);
+
+
+	// std::cout << vlc->getCount();
+	// for (int i = 0; i < vlc->getCount(); ++i)
+	// {
+	// 	ISpaceMarine* cur = vlc->getUnit(i);
+	// 	cur->battleCry();
+	// 	cur->rangedAttack();
+	// 	cur->meleeAttack();
+	// }
+	// delete vlc;
 	return 0;
 }

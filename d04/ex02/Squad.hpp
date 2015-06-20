@@ -21,7 +21,6 @@
 class Squad : public ISquad
 {
 	private:
-		// int _nbUnits = 0;
 		struct _sUnit
 		{
 			int index;

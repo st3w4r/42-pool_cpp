@@ -28,10 +28,10 @@ class AssaultTerminator : public ISpaceMarine
 		AssaultTerminator & operator=(AssaultTerminator const & rhs);
 
 		//__Interface__
-		ISpaceMarine* clone() const = 0;
-		void battleCry() const = 0;
-		void rangedAttack() const = 0;
-		void meleeAttack() const = 0;
+		ISpaceMarine* clone() const;
+		void battleCry() const;
+		void rangedAttack() const;
+		void meleeAttack() const;
 };
 
 #endif // END: ASSAULT_TERMINATOR_HPP
