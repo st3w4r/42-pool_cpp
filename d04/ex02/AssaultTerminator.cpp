@@ -28,7 +28,7 @@ AssaultTerminator::AssaultTerminator(AssaultTerminator const & src)
 
 AssaultTerminator::~AssaultTerminator(void)
 {
-	std::cout << "I’ll be back ..." << std::endl;
+	std::cout << "I'll be back ..." << std::endl;
 	return;
 }
 

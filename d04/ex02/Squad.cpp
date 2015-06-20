@@ -34,7 +34,6 @@ Squad::~Squad(void)
 		_listUnits = _listUnits->next;
 		if (!_listUnits)
 			delete tmp;
-		// delete _listUnits->_sUnit;
 	}
 	return;
 }
