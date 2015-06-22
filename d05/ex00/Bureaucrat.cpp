@@ -12,6 +12,62 @@
 
 #include "Bureaucrat.hpp"
 
+// __GradeTooHighException__
+Bureaucrat::GradeTooHighException::GradeTooHighException(void)
+{
+}
+
+Bureaucrat::GradeTooHighException::GradeTooHighException(GradeTooHighException const & src)
+{
+	*this = src;
+}
+
+Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw()
+{
+
+}
+
+Bureaucrat::GradeTooHighException & Bureaucrat::GradeTooHighException::operator=(GradeTooHighException const & rhs)
+{
+	(void)rhs;
+	return *this;
+}
+
+const char * Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade Too High Exception";
+}
+
+
+// __GradeTooLowException__
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(void)
+{
+}
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(GradeTooLowException const & src)
+{
+	*this = src;
+}
+
+Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw()
+{
+
+}
+
+Bureaucrat::GradeTooLowException & Bureaucrat::GradeTooLowException::operator=(GradeTooLowException const & rhs)
+{
+	(void)rhs;
+	return *this;
+}
+
+//__Bureaucrat__
+const char * Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade Too Low Exception";
+}
+
+
 Bureaucrat::Bureaucrat(void)
 {
 	return;
