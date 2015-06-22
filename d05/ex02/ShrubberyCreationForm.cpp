@@ -16,20 +16,20 @@ const int ShrubberyCreationForm::_sign = 145;
 const int ShrubberyCreationForm::_exec = 137;
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) :
-	Form("Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
+	Form("Anonymous", "Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
 {
 	return;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) :
-	Form(target, ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
+	Form(target, "Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
 {
 	return;
 }
 
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const & src) :
-	Form("Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
+	Form("Anonymous", "Shrubbery", ShrubberyCreationForm::_sign, ShrubberyCreationForm::_exec)
 {
 	*this = src;
 	return;
@@ -48,10 +48,10 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
-	this->checkExecute(executor);
+	Form::execute(executor);
 
 	std::ofstream file;
-	std::string nameFile = this->getName();
+	std::string nameFile = this->getTarget();
 	nameFile += "_shrubbery";
 	file.open(nameFile);
 	file << "               ,@@@@@@@," << std::endl;

@@ -16,20 +16,20 @@ const int RobotomyRequestForm::_sign = 72;
 const int RobotomyRequestForm::_exec = 45;
 
 RobotomyRequestForm::RobotomyRequestForm(void) :
-	Form("Robotomy", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
+	Form("Anonymous", "Robotomy", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
 {
 	srand(time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) :
-	Form(target, RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
+	Form(target, "Robotomy", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
 {
 	srand(time(NULL));
 }
 
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const & src) :
-	Form("Robotomy", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
+	Form("Anonymous", "Robotomy", RobotomyRequestForm::_sign, RobotomyRequestForm::_exec)
 {
 	srand(time(NULL));
 	*this = src;
@@ -50,15 +50,15 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
-	this->checkExecute(executor);
+	Form::execute(executor);
 
 	if (rand() % 2 == 1)
 	{
 		std::cout << "BRRRRRRiiiiizzzzzBRRRRiizzzzzz" << std::endl;
-		std::cout << "<" << this->getName() << "> has been robotomized successfully" << std::endl;
+		std::cout << "<" << this->getTarget() << "> has been robotomized successfully" << std::endl;
 	}
 	else
 	{
-		std::cout << "<" << this->getName() << "> Robotomized failed" << std::endl;
+		std::cout << "<" << this->getTarget() << "> Robotomized failed" << std::endl;
 	}
 }

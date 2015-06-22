@@ -65,6 +65,7 @@ class Form
 
 
 	private:
+		const std::string _target;
 		const std::string _name;
 		const int _gradeSign;
 		const int _gradeExecute;
@@ -72,17 +73,17 @@ class Form
 
 		Form(void);
 	public:
-		Form(std::string name, int gradeSign, int gradeExecute);
+		Form(std::string target, std::string name, int gradeSign, int gradeExecute);
 		Form(Form const & src);
-		virtual ~Form(void);
+		virtual ~Form(void) = 0;
 
 		Form & operator=(Form const & rhs);
 
-		void checkExecute(Bureaucrat const & executor) const;
 		virtual void execute(Bureaucrat const & executor) const = 0;
 		void beSigned(Bureaucrat & bureaucrat);
 
 		//__Getter__
+		std::string getTarget() const;
 		std::string getName() const;
 		int getGradeSign() const;
 		int getGradeExecute() const;

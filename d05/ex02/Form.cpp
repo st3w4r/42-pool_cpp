@@ -96,13 +96,13 @@ const char * Form::IsNotSignedException::what() const throw()
 
 //__Form__
 
-Form::Form(void) : _name("Form"), _gradeSign(1), _gradeExecute(1), _isSigned(false)
+Form::Form(void) : _target("Anonymous"), _name("Form"), _gradeSign(1), _gradeExecute(1), _isSigned(false)
 {
 	return;
 }
 
-Form::Form(std::string name, int gradeSign, int gradeExecute) :
-			_name(name), _gradeSign(gradeSign), _gradeExecute(gradeExecute), _isSigned(false)
+Form::Form(std::string target, std::string name, int gradeSign, int gradeExecute) :
+		_target(target), _name(name), _gradeSign(gradeSign), _gradeExecute(gradeExecute), _isSigned(false)
 {
 	if (gradeSign > 150 || gradeExecute > 150)
 	{
@@ -115,7 +115,7 @@ Form::Form(std::string name, int gradeSign, int gradeExecute) :
 	return;
 }
 
-Form::Form(Form const & src) : _name(src._name), _gradeSign(src._gradeSign), 			_gradeExecute(src._gradeExecute)
+Form::Form(Form const & src) :_target(src._target), _name(src._name), _gradeSign(src._gradeSign), 			_gradeExecute(src._gradeExecute)
 {
 	*this = src;
 	return;
@@ -142,7 +142,7 @@ void Form::beSigned(Bureaucrat & bureaucrat)
 		_isSigned = true;
 }
 
-void Form::checkExecute(Bureaucrat const & executor) const
+void Form::execute(Bureaucrat const & executor) const
 {
 	if (this->getSigned() == false)
 		throw Form::IsNotSignedException();
@@ -159,6 +159,11 @@ std::ostream & operator<<(std::ostream & o, Form & rhs)
 }
 
 //__Getter__
+std::string Form::getTarget() const
+{
+	return _target;
+}
+
 std::string Form::getName() const
 {
 	return _name;
