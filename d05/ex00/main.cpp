@@ -95,8 +95,17 @@ int main(void)
 	}
 
 	{
-		Bureaucrat b = Bureaucrat("test", 60);
-		std::cout << std::endl << b << std::endl;
+		try
+		{
+			Bureaucrat b = Bureaucrat("test", 60);
+			b.decGrade(-40);
+			b.incGrade(-10);
+			std::cout << std::endl << b << std::endl;
+		}
+		catch (std::exception & e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 
 		Bureaucrat a = Bureaucrat("HEY", 10);
 		std::cout << a << std::endl;
