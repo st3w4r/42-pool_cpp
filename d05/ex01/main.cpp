@@ -18,10 +18,11 @@ int main(void)
 	std::cout << "_____Form_____" << std::endl;
 	{
 		Bureaucrat b1 = Bureaucrat("The Bureaucrat 1", 40);
-		Bureaucrat b2 = Bureaucrat("The Bureaucrat 2", 20);
+		Bureaucrat b2 = Bureaucrat("The Bureaucrat 2", 10);
 
 		Form f1 = Form("Form 1", 50, 70);
 		Form f2 = Form("Form 2", 20, 70);
+		Form f3 = Form("Form 3", 30, 70);
 
 
 		b1.signForm(f1);
@@ -42,6 +43,15 @@ int main(void)
 		b2.signForm(f2);
 		std::cout << b2;
 		std::cout << f2 << std::endl;
+
+		b2.signForm(f3);
+		std::cout << b2;
+		std::cout << f3 << std::endl;
+
+		b1.signForm(f3);
+		std::cout << b1;
+		std::cout << f3 << std::endl;
+
 
 	}
 	return (0);
