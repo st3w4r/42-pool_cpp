@@ -49,32 +49,24 @@ Bureaucrat & Bureaucrat::operator=(Bureaucrat const & rhs)
 	return *this;
 }
 
-void Bureaucrat::incGrade(int n)
+void Bureaucrat::incGrade(void)
 {
-	if ((_grade - n) < 1)
+	if ((_grade - 1) < 1)
 	{
 		throw Bureaucrat::GradeTooHighException();
 	}
-	else if ((_grade - n) > 150)
-	{
-		throw Bureaucrat::GradeTooLowException();
-	}
 	else
-		_grade -= n;
+		_grade--;
 }
 
-void Bureaucrat::decGrade(int n)
+void Bureaucrat::decGrade(void)
 {
-	if ((_grade + n) > 150)
+	if ((_grade + 1) > 150)
 	{
 		throw Bureaucrat::GradeTooLowException();
 	}
-	else if ((_grade + n) < 1)
-	{
-		throw Bureaucrat::GradeTooHighException();
-	}
 	else
-		_grade += n;
+		_grade++;
 }
 
 // __Getter__

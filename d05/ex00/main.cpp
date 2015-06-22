@@ -15,17 +15,18 @@
 int main(void)
 {
 	{
-		std::cout << std::endl << "Init: 4 Inc: 3 Inc: 1 Dec: 150" << std::endl;
+		std::cout << std::endl << "Init: 3 Inc: 3" << std::endl;
 		try
 		{
-			Bureaucrat b = Bureaucrat("test", 4);
+			Bureaucrat b = Bureaucrat("test", 3);
 			std::cout << b.getName() << std::endl;
+
 			std::cout << b.getGrade() << std::endl;
-			b.incGrade(3);
+			b.incGrade();
 			std::cout << b.getGrade() << std::endl;
-			b.incGrade(1);
+			b.incGrade();
 			std::cout << b.getGrade() << std::endl;
-			b.decGrade(150);
+			b.incGrade();
 			std::cout << b.getGrade() << std::endl;
 
 		}
@@ -34,18 +35,20 @@ int main(void)
 			std::cout << e.what() << std::endl;
 		}
 	}
-
 	{
-		std::cout << std::endl << "Init: 4 Inc: 3 Dec: 150" << std::endl;
+		std::cout << std::endl << "Init: 148 Dec: 3" << std::endl;
 		try
 		{
-			Bureaucrat b = Bureaucrat("test", 4);
+			Bureaucrat b = Bureaucrat("test", 148);
 			std::cout << b.getGrade() << std::endl;
-			b.incGrade(3);
+			b.decGrade();
 			std::cout << b.getGrade() << std::endl;
-			b.decGrade(150);
+			b.decGrade();
 			std::cout << b.getGrade() << std::endl;
-
+			b.decGrade();
+			std::cout << b.getGrade() << std::endl;
+			b.incGrade();
+			std::cout << b.getGrade() << std::endl;
 		}
 		catch(std::exception & e)
 		{
@@ -53,14 +56,17 @@ int main(void)
 		}
 	}
 
+
 	{
-		std::cout << std::endl << "Init: 60 Inc: 1 Dec: 10" << std::endl;
+		std::cout << std::endl << "Init: 60 Inc: 2 Dec: 1" << std::endl;
 		try
 		{
 			Bureaucrat b = Bureaucrat("test", 60);
-			b.incGrade(1);
+			b.incGrade();
 			std::cout << b.getGrade() << std::endl;
-			b.decGrade(10);
+			b.incGrade();
+			std::cout << b.getGrade() << std::endl;
+			b.decGrade();
 			std::cout << b.getGrade() << std::endl;
 
 		}
@@ -98,17 +104,15 @@ int main(void)
 		try
 		{
 			Bureaucrat b = Bureaucrat("test", 60);
-			b.decGrade(-40);
-			b.incGrade(-10);
 			std::cout << std::endl << b << std::endl;
+
+			Bureaucrat a = Bureaucrat("HEY", 10);
+			std::cout << a << std::endl;
 		}
 		catch (std::exception & e)
 		{
 			std::cout << e.what() << std::endl;
 		}
-
-		Bureaucrat a = Bureaucrat("HEY", 10);
-		std::cout << a << std::endl;
 	}
 	return (0);
 }

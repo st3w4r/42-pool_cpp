@@ -51,8 +51,8 @@ class Bureaucrat
 		Bureaucrat & operator=(Bureaucrat const & rhs);
 
 
-		void incGrade(int n);
-		void decGrade(int n);
+		void incGrade();
+		void decGrade();
 
 		//__Getter__
 		int getGrade() const;
