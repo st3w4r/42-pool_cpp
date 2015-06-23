@@ -25,5 +25,7 @@ int main(void)
 	std::cout << d1->s1 << std::endl;
 	std::cout << d1->n << std::endl;
 	std::cout << d1->s2 << std::endl;
+
+	delete d1;
 	return (0);
 }
