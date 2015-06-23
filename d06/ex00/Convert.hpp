@@ -55,6 +55,7 @@ class Convert
 
 		Convert & operator=(Convert const & rhs);
 
+		static int		getPrecision(char *str);
 		static char		doubleToChar(double dIn);
 		static int		doubleToInt(double dIn);
 		static float	doubleToFloat(double dIn);

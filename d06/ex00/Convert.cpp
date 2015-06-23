@@ -92,6 +92,19 @@ Convert & Convert::operator=(Convert const & rhs)
 	return *this;
 }
 
+int Convert::getPrecision(char *str) {
+	unsigned int i;
+
+	i = 0;
+	while (str[i] != '.' && str[i])
+		i++;
+	if (std::strlen(str) == i)
+		return (1);
+	else
+		return (std::strlen(str) - i - 1);
+}
+
+
 int Convert::doubleToInt(double dIn)
 {
 	int i;

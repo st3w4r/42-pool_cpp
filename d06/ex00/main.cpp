@@ -22,6 +22,12 @@ int main(int argc, char *argv[])
 		return (0);
 	}
 	double dIn = std::atof(argv[1]);
+	int precision = Convert::getPrecision(argv[1]);
+	if(dIn == 0 && argv[1][0] != '0')
+	{
+		std::cout << "Numeric number need." << std::endl;
+		return (0);
+	}
 	try
 	{
 		std::cout << "char: ";
@@ -46,7 +52,7 @@ int main(int argc, char *argv[])
 	try
 	{
 		std::cout << "float: ";
-		std::cout << std::setprecision(1) << std::fixed << Convert::doubleToFloat(dIn) << "f" << std::endl;
+		std::cout << std::setprecision(precision) << std::fixed << Convert::doubleToFloat(dIn) << "f" << std::endl;
 	}
 	catch (std::exception & e)
 	{
@@ -56,7 +62,7 @@ int main(int argc, char *argv[])
 	try
 	{
 		std::cout << "double: ";
-		std::cout << std::setprecision(1) << std::fixed << Convert::doubleToDouble(dIn) << std::endl;
+		std::cout << std::setprecision(precision) << std::fixed << Convert::doubleToDouble(dIn) << std::endl;
 	}
 	catch (std::exception & e)
 	{
