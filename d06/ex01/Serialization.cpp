@@ -56,7 +56,7 @@ void * Serialization::serialize(void)
 	data->s1 = randomArrayAplhaNum();
 	data->n = rand();
 	data->s2 = randomArrayAplhaNum();
-	return data;
+	return reinterpret_cast<void *>(data);
 }
 
 Serialization::Data * Serialization::deserialize(void * raw)
