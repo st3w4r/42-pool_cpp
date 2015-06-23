@@ -88,6 +88,7 @@ Convert::~Convert(void)
 
 Convert & Convert::operator=(Convert const & rhs)
 {
+	(void)rhs;
 	return *this;
 }
 
@@ -106,6 +107,8 @@ char Convert::doubleToChar(double dIn)
 {
 	char c;
 
+	if (isnan(dIn) == true)
+		throw Convert::ImpossibleException();
 	c = static_cast<char>(dIn);
 	if (std::isprint(c) == false)
 		throw Convert::NoneDisplayableException();
