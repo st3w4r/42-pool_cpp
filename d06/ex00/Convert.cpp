@@ -94,14 +94,20 @@ Convert & Convert::operator=(Convert const & rhs)
 
 int Convert::getPrecision(char *str) {
 	unsigned int i;
+	unsigned int k;
 
 	i = 0;
 	while (str[i] != '.' && str[i])
 		i++;
-	if (std::strlen(str) == i)
+	k = i + 1;
+	while (isdigit(str[k]) != 0 && str[k])
+		k++;
+	k = k -i;
+	std::cout << "dsa " << k << std::endl;
+	if (strlen(str) == i)
 		return (1);
 	else
-		return (std::strlen(str) - i - 1);
+		return (k - 1);
 }
 
 
