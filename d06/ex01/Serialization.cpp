@@ -32,7 +32,7 @@ Serialization::~Serialization(void)
 
 Serialization & Serialization::operator=(Serialization const & rhs)
 {
-	(void)rhs;
+	static_cast<void>(rhs);
 	return *this;
 }
 

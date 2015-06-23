@@ -31,7 +31,7 @@ Convert::NoneDisplayableException::~NoneDisplayableException(void) throw()
 
 Convert::NoneDisplayableException & Convert::NoneDisplayableException::operator=(Convert::NoneDisplayableException const & rhs)
 {
-	(void)rhs;
+	static_cast<void>(rhs);
 	return *this;
 }
 
@@ -59,7 +59,7 @@ Convert::ImpossibleException::~ImpossibleException(void) throw()
 
 Convert::ImpossibleException & Convert::ImpossibleException::operator=(Convert::ImpossibleException const & rhs)
 {
-	(void)rhs;
+	static_cast<void>(rhs);
 	return *this;
 }
 
