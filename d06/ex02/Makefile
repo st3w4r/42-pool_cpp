@@ -12,7 +12,7 @@
 
 #____________CONFIG____________#
 
-NAME = Serialization
+NAME = Identify
 PATH_SRC = ./
 PATH_OBJ = ./
 PATH_INC = ./
@@ -27,7 +27,10 @@ LIBS =
 #____________FILES____________#
 
 SRC =	main.cpp \
-		Serialization.cpp
+		Base.cpp \
+		A.cpp \
+		B.cpp \
+		C.cpp
 
 
 OBJ = $(addprefix $(PATH_SRC), $(SRC:.cpp=.o))
