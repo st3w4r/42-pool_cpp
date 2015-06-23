@@ -103,9 +103,10 @@ int Convert::getPrecision(char *str) {
 	while (isdigit(str[k]) != 0 && str[k])
 		k++;
 	k = k -i;
-	std::cout << "dsa " << k << std::endl;
 	if (strlen(str) == i)
 		return (1);
+	else if (k == 1)
+		return 1;
 	else
 		return (k - 1);
 }
