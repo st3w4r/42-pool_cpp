@@ -15,7 +15,9 @@
 
 #include <string>
 #include <iostream>
-#include <math.h>
+#include <cmath>
+#include <iomanip>
+#include <limits>
 
 class Convert
 {

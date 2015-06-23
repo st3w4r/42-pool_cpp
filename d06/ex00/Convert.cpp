@@ -96,6 +96,10 @@ int Convert::doubleToInt(double dIn)
 {
 	int i;
 
+	if (isinf(dIn) == true)
+		throw Convert::ImpossibleException();
+	if (dIn > static_cast<double>(INT_MAX) || dIn < static_cast<double>(INT_MIN))
+		throw Convert::ImpossibleException();
 	if (isnan(dIn) == true)
 		throw Convert::ImpossibleException();
 	i = static_cast<int>(dIn);
@@ -115,7 +119,7 @@ char Convert::doubleToChar(double dIn)
 	return c;
 }
 
-float Convert::doubleToFloat(double dIn)
+double Convert::doubleToDouble(double dIn)
 {
 	double d;
 
@@ -123,7 +127,7 @@ float Convert::doubleToFloat(double dIn)
 	return d;
 }
 
-double Convert::doubleToDouble(double dIn)
+float Convert::doubleToFloat(double dIn)
 {
 	float f;
 

@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 	try
 	{
 		std::cout << "float: ";
-		std::cout << Convert::doubleToFloat(dIn) << "f" << std::endl;
+		std::cout << std::setprecision(1) << std::fixed << Convert::doubleToFloat(dIn) << "f" << std::endl;
 	}
 	catch (std::exception & e)
 	{
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
 	try
 	{
 		std::cout << "double: ";
-		std::cout << Convert::doubleToDouble(dIn) << std::endl;
+		std::cout << std::setprecision(1) << std::fixed << Convert::doubleToDouble(dIn) << std::endl;
 	}
 	catch (std::exception & e)
 	{
