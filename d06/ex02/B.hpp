@@ -17,14 +17,8 @@
 
 class B : public Base
 {
-	private:
 	public:
-		B(void);
-		B(B const & src);
-		virtual ~B(void);
-
-		B & operator=(B const & rhs);
-
+	private:
 };
 
 #endif // END: B_HPP

@@ -19,12 +19,6 @@ class A : public Base
 {
 	private:
 	public:
-		A(void);
-		A(A const & src);
-		virtual ~A(void);
-
-		A & operator=(A const & rhs);
-
 };
 
 #endif // END: A_HPP

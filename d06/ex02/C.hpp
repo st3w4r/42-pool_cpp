@@ -19,12 +19,6 @@ class C : public Base
 {
 	private:
 	public:
-		C(void);
-		C(C const & src);
-		virtual ~C(void);
-
-		C & operator=(C const & rhs);
-
 };
 
 #endif // END: C_HPP

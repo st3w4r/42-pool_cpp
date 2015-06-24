@@ -19,11 +19,8 @@ class Base
 {
 	private:
 	public:
-		Base(void);
-		Base(Base const & src);
 		virtual ~Base(void);
 
-		Base & operator=(Base const & rhs);
 };
 
 #endif // END: BASE_HPP

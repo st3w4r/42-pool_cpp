@@ -28,9 +28,6 @@ LIBS =
 
 SRC =	main.cpp \
 		Base.cpp \
-		A.cpp \
-		B.cpp \
-		C.cpp
 
 
 OBJ = $(addprefix $(PATH_SRC), $(SRC:.cpp=.o))
