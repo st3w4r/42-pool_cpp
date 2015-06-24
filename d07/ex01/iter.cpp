@@ -13,8 +13,8 @@
 #include <iostream>
 #include <string>
 
-template<typename T, typename F>
-void iter(T arr, size_t len, F func)
+template<typename T>
+void iter(T *arr, size_t len, void (*func)(T const &))
 {
 	if (!arr)
 		return;
@@ -25,20 +25,14 @@ void iter(T arr, size_t len, F func)
 	}
 }
 
-
-void printInt(int i)
+void printInt(int const & i)
 {
 	std::cout << i << std::endl;
 }
 
-void printString(std::string str)
+void printString(std::string const & str)
 {
 	std::cout << str << std::endl;
-}
-
-void inc(int & i)
-{
-	i++;
 }
 
 int main(void)
@@ -51,12 +45,6 @@ int main(void)
 	std::cout << std::endl;
 
 	std::cout << "Array Int: "<< std::endl;
-	iter(arrInt, 5, printInt);
-	std::cout << std::endl;
-
-	std::cout << "Increment: "<< std::endl;
-	iter(arrInt, 5, inc);
-
 	iter(arrInt, 5, printInt);
 	std::cout << std::endl;
 
