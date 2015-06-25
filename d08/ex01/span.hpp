@@ -65,6 +65,7 @@ class Span
 	public:
 		Span(void);
 		Span(unsigned int n);
+		Span(unsigned int begin, unsigned int end);
 		Span(Span const & src);
 		~Span(void);
 

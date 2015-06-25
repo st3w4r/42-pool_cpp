@@ -122,6 +122,15 @@ Span::Span(unsigned int n)
 	addNumber(n);
 }
 
+Span::Span(unsigned int begin, unsigned int end)
+{
+	if (static_cast<int>(begin) < 0 || static_cast<int>(end) < 0)
+		throw Span::InvalidNumberException();
+	for (unsigned int i = begin; i < end; i++) {_containerInts.push_back(i);}
+	std::sort(_containerInts.begin(), _containerInts.end());
+}
+
+
 Span & Span::operator=(Span const & rhs)
 {
 	static_cast<void>(rhs);

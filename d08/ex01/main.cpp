@@ -69,5 +69,19 @@ int main(void)
 			std::cout << e.what() << std::endl;
 		}
 	}
+
+	std::cout << "_______" << std::endl;
+	{
+		try
+		{
+			Span sp = Span(0, 10000);
+			std::cout <<  "Longest Span: " << sp.longestSpan() << std::endl;
+			std::cout <<  "Shortest Span: " << sp.shortestSpan() << std::endl;
+		}
+		catch (std::exception & e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
 	return (0);
 }
