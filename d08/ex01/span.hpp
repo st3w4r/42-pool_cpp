@@ -60,7 +60,6 @@ class Span
 
 
 	private:
-		// unsigned int _n;
 		std::vector<unsigned int> _containerInts;
 
 	public:
