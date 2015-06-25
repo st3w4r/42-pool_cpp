@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef EASY_FIND_HPP
+# define EASY_FIND_HPP
+
 #include <list>
 #include <iostream>
 
@@ -23,3 +26,5 @@ bool easyfind(T lst, int n)
 		return false;
 	return true;
 }
+
+#endif // END: EASY_FIND_HPP
