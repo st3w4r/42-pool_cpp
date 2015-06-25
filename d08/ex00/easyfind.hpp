@@ -13,7 +13,6 @@
 #ifndef EASY_FIND_HPP
 # define EASY_FIND_HPP
 
-#include <list>
 #include <iostream>
 
 template<typename T>
