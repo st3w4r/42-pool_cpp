@@ -16,11 +16,11 @@
 #include <iostream>
 #include <stack>
 #include <list>
-
+#include <iterator>
 
 template <typename T>
 
-class MutantStack
+class MutantStack : public std::stack<T>
 {
 	private:
 		std::stack<T> _stack;
@@ -66,33 +66,13 @@ class MutantStack
 
 		typedef std::list<int>::iterator iterator;
 
-		iterator begin() { return _list.begin();}
-		iterator end() { return _list.end();}
-
-
-		// MutantStack & operator=(MutantStack	Stack const & rhs)
-		// {
-			// static_cast<void>(rhs);
-		// }
-
-		// typedef std::stack<MutantStack>::const_iterator const_iterator;
-
-		// typedef std::stack<MutantStack>::iterator iterator;
-		// iterator begin();
-		// iterator end();
-
+		iterator begin()
+		{
+			return _list.begin();
+		}
+		iterator end() {
+			return _list.end();
+		}
 };
 
 #endif // END: MUTANT_STACK_HPP
-
-
-// typedef std::vector<Point>::iterator iterator;
-// typedef std::vector<Point>::const_iterator const_iterator;
-//
-// iterator begin() { return m_shape.container.begin(); }
-//
-// const_iterator begin() const { return m_shape.container.begin(); }
-//
-// iterator end() { return m_shape.container.end(); }
-//
-// const_iterator end() const { return m_shape.const_container.end(); }
