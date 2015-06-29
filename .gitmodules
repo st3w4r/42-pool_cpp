@@ -1,0 +1,6 @@
+[submodule "rush00"]
+	path = rush00
+	url = https://github.com/z0mbie42/piscine_cpp_rush00.git
+[submodule "rush01"]
+	path = rush01
+	url = https://github.com/z0mbie42/piscine_cpp_rush01.git
